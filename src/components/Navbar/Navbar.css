@@ -1,0 +1,42 @@
+/* File: Nav.css */
+
+.navbar {
+    background: linear-gradient(to right, #4CAF50, #FFC107); /* Gradient background */
+    color: #fff; /* White text color */
+    padding: 20px; /* Increased padding for better spacing */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    display: flex;
+    justify-content: space-between; /* Spread items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar__logo {
+    font-size: 24px; /* Increased font size for logo */
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar__item {
+    margin-left: 20px; /* Spacing between items */
+}
+
+.navbar__link {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-size: 18px; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navbar__link:hover {
+    color: #FF5722; /* Change text color on hover */
+}
