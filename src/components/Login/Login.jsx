@@ -19,7 +19,7 @@ const Login = () => {
       localStorage.setItem('accessToken', response.data.access_token);
       localStorage.setItem('refreshToken', response.data.refresh_token);
       localStorage.setItem('user', JSON.stringify(response.data.user)); // Convert user object to string before storing
-      navigate('/list');
+      navigate('/order');
 
       // Log success message
       console.log('Logged in successfully:', response.data);
@@ -44,7 +44,7 @@ const Login = () => {
           <label className="label">Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className='button'>Login</button>
       </form>
       {error && <p>{error}</p>}
     </div>

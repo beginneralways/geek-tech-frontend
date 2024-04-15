@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Order.css'; // Importing CSS file for styling
 
-const ProductList = () => {
+const Order = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -47,13 +48,13 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <div className="product-list-container"> 
       {isLoggedIn ? (
         <div>
-          <h2>Product List</h2>
-          <ul>
+          <h2 className="title">Product List</h2> 
+          <ul className="product-list"> 
             {products.map((product) => (
-              <li key={product.id}>
+              <li key={product.id} className="product-item">
                 <div>Name: {product.name}</div>
                 <div>Price: {product.price}</div>
                 <div>Weight: {product.weight}</div>
@@ -61,10 +62,10 @@ const ProductList = () => {
               </li>
             ))}
           </ul>
-          <h2>Cart</h2>
-          <ul>
+          <h2 className="title">Cart</h2> 
+          <ul className="cart-list"> 
             {cart.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="cart-item"> 
                 <div>Name: {item.name}</div>
                 <div>Price: {item.price}</div>
                 <div>Weight: {item.weight}</div>
@@ -78,18 +79,19 @@ const ProductList = () => {
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 placeholder="Enter your name"
+                className="input" 
               />
-              <button onClick={placeOrder}>Place Order</button>
+              <button onClick={placeOrder} className="button">Place Order</button> 
             </div>
           )}
-          {orderPlaced && <p>Order placed successfully!</p>}
-          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+          {orderPlaced && <p className="order-placed-message">Order placed successfully!</p>} 
+          <button onClick={() => setIsLoggedIn(false)} className="button">Logout</button> 
         </div>
       ) : (
-        <p>Please log in to view the products.</p>
+        <p className="login-message">Please log in to view the products.</p> 
       )}
     </div>
   );
 };
 
-export default ProductList;
+export default Order;

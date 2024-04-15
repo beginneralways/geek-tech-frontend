@@ -1,0 +1,45 @@
+.product-list-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-list,
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-item,
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-right: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.order-placed-message {
+  color: green;
+  font-weight: bold;
+}
+
+.login-message {
+  color: red;
+  font-weight: bold;
+}
