@@ -6,6 +6,7 @@ const ProductList = () => {
   const [cart, setCart] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [customerName, setCustomerName] = useState('');
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
@@ -34,7 +35,6 @@ const ProductList = () => {
   const placeOrder = async () => {
     try {
       const productIds = cart.map((product) => product.id);
-      const customerName = 'John Doe'; // Replace with actual customer name
       await axios.post('http://localhost:3333/api/v1/package', {
         customerName: customerName,
         Ids: productIds,
@@ -72,9 +72,18 @@ const ProductList = () => {
             ))}
           </ul>
           {cart.length > 0 && !orderPlaced && (
-            <button onClick={placeOrder}>Place Order</button>
+            <div>
+              <input
+                type="text"
+                value={customerName}
+                onChange={(e) => setCustomerName(e.target.value)}
+                placeholder="Enter your name"
+              />
+              <button onClick={placeOrder}>Place Order</button>
+            </div>
           )}
           {orderPlaced && <p>Order placed successfully!</p>}
+          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
         </div>
       ) : (
         <p>Please log in to view the products.</p>

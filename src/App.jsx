@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login';
 import ProductList from './components/ProductList/ProductList';
 
+import ViewItems from './components/ViewItems/ViewItems';
+
 
 
 
@@ -18,6 +20,7 @@ function App() {
       <Navbar/>
       <Routes>
       {/* <Route exact path="/user" element={<UserList/>} /> */}
+      <Route path='/home' element={<ViewItems />} />
       <Route exact path="/login" element={<Login />} />
       <Route exact path='/list' element={<ProductList />} />
       {/* <Route exact path='/dashboard' element={<Dashboard />} />
